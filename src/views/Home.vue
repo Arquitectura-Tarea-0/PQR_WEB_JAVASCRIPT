@@ -2,11 +2,11 @@
   <v-app>
     <v-app-bar app>
       <v-spacer></v-spacer>
-      <v-btn text to="/">
-        <span>login</span>
-      </v-btn>
       <v-btn text to="/register">
-        <span>register</span>
+        <span>registrarse</span>
+      </v-btn>
+      <v-btn text to="/">
+        <span>iniciar sesión</span>
       </v-btn>
     </v-app-bar>
 

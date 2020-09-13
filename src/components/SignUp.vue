@@ -3,17 +3,15 @@
     <v-row align="center" justify="center">
       <v-col cols="6">
         <v-card>
-          <v-card-title class="headline justify-center">Welcome! Log in please!</v-card-title>
 
-          <v-form v-model="valid" ref="form" lazy-validation>
+          <v-form v-model="valid" ref="form" lazy-validation class="ma-5 pr-5 pl-5 pb-5">
             <v-card-text>
-              <v-text-field label="E-mail" v-model="email" :rules="emailRules" required></v-text-field>
-              <v-text-field label="Password" v-model="password" :rules="passwordRules" required></v-text-field>
+              <v-text-field label="Correo" v-model="email" :rules="emailRules" required></v-text-field>
+              <v-text-field label="Contraseña" v-model="password" :rules="passwordRules" required></v-text-field>
             </v-card-text>
 
             <v-card-actions class="justify-center">
-              <v-btn @click="submit" :disabled="!valid">submit</v-btn>
-              <v-btn @click="clear">clear</v-btn>
+              <v-btn block @click="submit" :disabled="!valid">Iniciar sesión</v-btn>
             </v-card-actions>
           </v-form>
         </v-card>
@@ -53,9 +51,6 @@ export default {
           checkbox: this.checkbox,
         });
       }
-    },
-    clear() {
-      this.$refs.form.reset();
     },
   },
 };
