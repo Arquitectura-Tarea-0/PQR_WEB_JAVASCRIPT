@@ -36,6 +36,11 @@
                                 <template v-slot:item.created_at = "{ item }">
                                     <span>{{ new Date(item.created_at).toISOString().split('T')[0] }}</span>
                                 </template>
+                                <template v-slot:item.actions = "{ item }">
+                                    <v-icon small class="mr-2" @click="showInfo(item)">
+                                        mdi-eye
+                                    </v-icon>
+                                </template>
                             </v-data-table>
                           </v-col>
                       </v-row>
@@ -67,6 +72,10 @@ export default {
                 {
                     text: 'Creado el',
                     value: 'created_at'
+                },
+                {
+                    text: 'Acciones',
+                    value: 'actions'
                 }
             ],
             pqrs: []
@@ -82,7 +91,7 @@ export default {
             .then(
                 response => {
                     if(response && response.data && response.data.request){
-                        this.pqrs = response.data.request
+                        this.pqrs = response.data.request.sort(function (a,b) { return -(a.id - b.id)})
                     }
                     console.log(response)
                 }
@@ -104,6 +113,14 @@ export default {
                 return "Abierta"
             }
             return text
+        },
+        showInfo(pqr){
+            this.$router.push({ 
+                name: 'ShowAdminPQR', 
+                params: { 
+                    pqr: pqr 
+                } 
+            })
         }
     }
 }

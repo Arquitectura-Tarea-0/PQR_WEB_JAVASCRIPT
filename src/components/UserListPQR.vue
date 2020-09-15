@@ -91,7 +91,7 @@ export default {
             .then(
                 response => {
                     if(response && response.data && response.data.request){
-                        this.pqrs = response.data.request
+                        this.pqrs = response.data.request.sort(function (a,b) { return -(a.id - b.id)})
                     }
                     console.log(response)
                 }

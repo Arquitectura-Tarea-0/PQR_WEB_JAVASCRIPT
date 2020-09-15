@@ -35,6 +35,14 @@ const routes = [
       {
         path: '',
         component: AdminListPQR
+      },
+      {
+        path: 'show',
+        name: 'ShowAdminPQR',
+        component: UserSelectPQR,
+        props: (route) => ({
+          ...route.params
+        })
       }
     ]
   },

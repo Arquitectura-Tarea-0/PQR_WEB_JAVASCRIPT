@@ -8,6 +8,9 @@
       <v-btn text to="/user">
         <span>Crear PQR</span>
       </v-btn>
+      <v-btn text @click="closeSession()">
+        <span>Cerrar sesión</span>
+      </v-btn>
     </v-app-bar>
 
     <v-main>
@@ -23,7 +26,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    closeSession(){
+      localStorage.clear()
+      this.$router.push("/");
+    }
+  }
+};
 </script>
 
 <style>

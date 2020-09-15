@@ -43,6 +43,16 @@
                 </p>
               </div>
             </div>
+
+            <div v-if="pqr && pqr.request_state == 'solved'">
+              <v-divider></v-divider>
+
+              <span>
+                <b>
+                  Aquí se supone que iría para "re-abrir" el asunto que parece inconcluso
+                </b>
+              </span>
+            </div>
           </v-card-text>
         </v-card>
       </v-col>
@@ -159,7 +169,6 @@ export default {
   },
   created() {
     if (this.pqr) {
-      console.log(this.pqr);
       this.findAllPQRNotes();
     } else {
       this.$router.push("/user/list");
