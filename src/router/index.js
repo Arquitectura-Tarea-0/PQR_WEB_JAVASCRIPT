@@ -5,6 +5,10 @@ import SignUp from '../components/SignUp.vue'
 import SignIn from '../components/SignIn.vue'
 import Admin from '../views/Admin.vue'
 import AdminListPQR from '../components/AdminListPQR.vue'
+import User from '../views/User.vue'
+import UserNewPQR from '../components/UserNewPQR.vue'
+import UserListPQR from '../components/UserListPQR.vue'
+import UserSelectPQR from '../components/UserSelectPQR.vue'
 
 Vue.use(VueRouter)
 
@@ -31,6 +35,28 @@ const routes = [
       {
         path: '',
         component: AdminListPQR
+      }
+    ]
+  },
+  {
+    path: '/user',
+    component: User,
+    children: [
+      {
+        path: '',
+        component: UserNewPQR
+      },
+      {
+        path: 'list',
+        component: UserListPQR
+      },
+      {
+        path: 'show',
+        name: 'ShowUserPQR',
+        component: UserSelectPQR,
+        props: (route) => ({
+          ...route.params
+        })
       }
     ]
   }

@@ -13,6 +13,9 @@
                 :rules="[rules.required]"
                 required
               ></v-text-field>
+              <span v-if="error" style="color: red">
+                {{ error }}
+              </span>
             </v-card-text>
 
             <v-card-actions class="justify-center">
@@ -40,6 +43,7 @@ export default {
         return pattern.test(value) || "Invalid e-mail.";
       },
     },
+    error: ""
   }),
 
   methods: {
@@ -52,6 +56,10 @@ export default {
             email: this.email,
           })
           .then((response) => {
+            console.log(response);
+            if(response && response.data && response.data.error){
+              this.error = response.data.error
+            }
             if(response && response.data && response.data.token && response.data.user){
               localStorage.setItem("token", response.data.token)
               localStorage.setItem("user", response.data.user)
@@ -61,8 +69,6 @@ export default {
               } else {
                 this.$router.push("/user");
               }
-            } else {
-                this.$router.push("/");
             }
           })
           .catch((error) => {
