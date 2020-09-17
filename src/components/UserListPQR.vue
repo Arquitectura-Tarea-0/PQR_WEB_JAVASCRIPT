@@ -6,20 +6,6 @@
                   <v-card-title class="justify-center">PQRs</v-card-title>
 
                   <v-card-text>
-                      <v-row align="center" justify="center">
-                          <v-col cols="3">
-                              <p>Filtrar por tipo solicitud</p>
-                          </v-col>
-                          <v-col cols="3">
-                              <p>Filtrar por estado solicitud</p>
-                          </v-col>
-                          <v-col cols="3">
-                              <p>Filtrar por fecha respuesta</p>
-                          </v-col>
-                          <v-col cols="3">
-                              <p>Filtrar por fecha creación</p>
-                          </v-col>
-                      </v-row>
                       <v-row justify="center" align="center">
                           <v-col cols="12">
                             <v-data-table
