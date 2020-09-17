@@ -105,6 +105,10 @@ export default {
         requestType(text){
             if(text && text == "request"){
                 return "Petición"
+            } else if(text && text == "complain"){
+                return "Queja"
+            } else if(text && text == "claim"){
+                return "Reclamo"
             }
             return text
         },
