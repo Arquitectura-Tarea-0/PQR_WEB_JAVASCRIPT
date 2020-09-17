@@ -5,6 +5,7 @@ import SignUp from '../components/SignUp.vue'
 import SignIn from '../components/SignIn.vue'
 import Admin from '../views/Admin.vue'
 import AdminListPQR from '../components/AdminListPQR.vue'
+import AdminSelectPQR from '../components/AdminSelectPQR.vue'
 import User from '../views/User.vue'
 import UserNewPQR from '../components/UserNewPQR.vue'
 import UserListPQR from '../components/UserListPQR.vue'
@@ -39,7 +40,7 @@ const routes = [
       {
         path: 'show',
         name: 'ShowAdminPQR',
-        component: UserSelectPQR,
+        component: AdminSelectPQR,
         props: (route) => ({
           ...route.params
         })

@@ -115,6 +115,12 @@ export default {
         requestState(text){
             if(text && text == "settled"){
                 return "Abierta"
+            } else if(text && text == "in_progress"){
+                return "En progreso"
+            } else if(text && text == "solved"){
+                return "Resuleta"
+            } else if(text && text == "closed"){
+                return "Cerrada"
             }
             return text
         },
