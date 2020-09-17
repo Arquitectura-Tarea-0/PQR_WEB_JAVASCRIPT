@@ -20,7 +20,7 @@ npm run build
 npm run lint
 ```
 ### Production environment
-Go to the live example: [Configuration Reference](https://heroku-pqr-exercise.herokuapp.com/).
+Go to the live example: [PQRsystem](https://heroku-pqr-exercise.herokuapp.com/).
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
